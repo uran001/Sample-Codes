@@ -6,3 +6,5 @@ func main(){
 	fmt.Printf("hello, world\n")
 	fmt.Printf("helpp. werf")
 }
+
+// This is test comment for git
