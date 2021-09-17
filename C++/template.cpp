@@ -21,50 +21,57 @@ const double eps = 1e-11;
 const int inf = (int) 2e9;
 const int mod = (int) 1e9 + 7;
 
+struct Node{
+
+	int num;
+	Node* next;
+	Node (int, NULL) :  num(int), next(NULL);
+};
+
+
+void reverse(Node* root){
+
+	Node * cur, * next, * prev;
+	cur = root;
+	prev = NULL;
+	while(cur!=NULL){
+		next = cur->next;
+		cur->next = prev;
+		prev = cur;
+		cur = prev->next;
+	}
+
+}
+
+
+
+
 int main(){
 	
-	freopen("input.txt", "r", stdin);
+	//freopen("input.txt", "r", stdin);
 	//freopen("output.txt", "w", stdout);
 
 	ios_base::sync_with_stdio(false); cin.tie(0), cout.tie(0);
-	int n;
-	cin >> n;
+	
+	cout << "YES\n";
 
-	map<int, std::vector<int>> mp;
+	//Node* root;
 
-	for(int i = 0; i < n; i ++){
-		int x, y;
-		cin >> x >> y;
-		mp[x].push_back(x);
-		mp[y].push_back(y);
-	}
+	//reverse(root);
 
-	map<int, int> sol;
+	//while(root->next != NULL){
+//		cout << root->num << " ";
+//		root = root->next;
+//	}	
 
-	//stack<auto> st;
-	for(auto i : mp){
-		if(sol[i] == 0){
-			int ans = 0;
-			int vis[N + 1];
-			memset(vis, 0, sizeof(vis));
-			stack<std::vector<int>> st;
-			st.push_back(i.second);
-			vis[i.first] = 1;
-			while(!st.empty()){
-				auto top = st.top();
-				st.pop();
-				ans ++;
-				for(auto x : top){
-					if(vis[x] == 0)
-						st.push(mp[x]);
-				}
-			}
-			sol[i] = ans;
-		}
-		else{
-			
-		}
-
-	}
+	
 	return 0;
 }
+
+
+1 2 3 4 
+
+
+1 3
+2 4
+

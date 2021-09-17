@@ -1,15 +1,7 @@
-import copy
-
-class A(object):
+def solve():
+    
     pass
 
-a = A()
-a.st = [1, 2, 3]
-a.nd = "sdfsd sdf sd"
-
-b = copy.copy(a)
-
-a.st.append(100)
-a.nd = 'dfgdgdgdf'
-
-print(b.st, b.nd)
+if __name__ == '__main__':
+    
+    solve()
